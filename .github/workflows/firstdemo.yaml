@@ -1,0 +1,26 @@
+name: First Demo Action
+on:
+  push:
+    branches:
+      - "main"
+jobs:
+  demo-job:
+    runs-on: ububtu-latest
+    steps:
+      - run: echo "Action Started"
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Run a multiple script
+        run: echo "Hello World!"
+      - name: Run a multiple script
+        run: |
+          echo Add other actions to build,
+          echo test, add deploy your project.
+      - name: List files
+        run: ls ${{github.workspace}}
+      - name: Print Github context
+        env:
+          GITHUB_CONTEXT: ${{toJson(github)}}
+        run: echo "$GITHUB_CONTEXT"
+      - name: Action completed
+        run: echo "Action Completed"
