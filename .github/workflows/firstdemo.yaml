@@ -5,7 +5,7 @@ on:
       - "main"
 jobs:
   demo-job:
-    runs-on: ububtu-latest
+    runs-on: ubuntu-latest
     steps:
       - run: echo "Action Started"
       - name: Checkout
